@@ -40,7 +40,7 @@
    
    '/' - empty path is initial endpoint for the app
    
-   '/profiles/myprofile/' - shows my profile
+   '/profiles/myprofile/' - shows my profile and here we can see how many friends we have 
    
    '/profiles/' - shows all profiles that exist in o the app
    
@@ -48,9 +48,12 @@
    
    '/profiles/<slug>/' - shows other user's profile
    
-   '/profiles/to-invite/' - shows users that we can invite
+   '/profiles/to-invite/' - shows users that we wait them to invite us
    
    '/profiles/send-invite/' - this endpoint is used to send invites to other users
+   
+   *when we send invite clicking on button, 'waiting for invite' appers*
+   *when we received an invitation, in navbar we can see how many people sent invitations '*
    
    '/profiles/remove-friend/' - this endpoint is used to remove user from a friend list
 
@@ -89,6 +92,6 @@
    to get admin panel use this:
    - login: keito
    - password: 1111
-   
 
     ```
+   
