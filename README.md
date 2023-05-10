@@ -70,4 +70,25 @@
     /accounts/login/ - login into a system
    
     /accounts/logout/ - logout from a system
+   
+   to log in system use this:
+   - login: alastuer@gmail.com
+   - password: 1111
+   
+   or 
+   - login: test@mail.com
+   - password: 123asd456dfg
+   
+    ```
+4. admin
+
+    ```python
+    /admin/ - admin panel for regulating profiles,
+    users, ralationships between users
+   
+   to get admin panel use this:
+   - login: keito
+   - password: 1111
+   
+
     ```
