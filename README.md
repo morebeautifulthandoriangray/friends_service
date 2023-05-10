@@ -6,11 +6,28 @@
 ---
 
 ## Project set up
+### Some install commands can be different on some OS!
 1. git clone in terminal: 
 `git clone https://github.com/morebeautifulthandoriangray/friends_service.git`
-2. then open project with IDE(I used Pycharm)
-3. then open terminal in IDE and run the server: `python3 manage.py runserver`
-4. server is running on `http://127.0.0.1:8000/` 
+2. choose the place where you want to store the project
+3. open  IDE(I used Pycharm): `file -> open -> friends_service`
+4. then open terminal in IDE and install next: 
+   ```
+   pip3 install django
+   
+   pip3 install django-allauth -- for login/logout
+   
+   pip install drf-yasg -U   -- for Swagger
+   
+   pip install django-rest-swagger
+    ```
+   
+5. run server with:
+    ```
+   python manage.py runserver -- Win
+   python3 manage.py runserver -- Mac
+   ```
+6. server is running on `http://127.0.0.1:8000/` 
 
 ---
 
