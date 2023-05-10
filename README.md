@@ -84,7 +84,7 @@
    
     ```
 4. admin
--
+
     ```python
     /admin/ - admin panel for regulating profiles,
     users, relationships between users
