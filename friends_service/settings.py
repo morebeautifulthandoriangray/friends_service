@@ -44,8 +44,8 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    # 'django.contrib.staticfiles',
     'drf_yasg',
+    'rest_framework_swagger'
 ]
 
 SITE_ID = 1

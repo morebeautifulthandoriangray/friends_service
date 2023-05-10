@@ -1,5 +1,7 @@
 from django.db.models import Q
 from django.shortcuts import render, redirect, get_object_or_404
+from rest_framework.decorators import api_view
+
 from .models import Profile, Relationship
 from .forms import ProfileModelForm
 from django.views.generic import ListView, DetailView
@@ -9,6 +11,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
 
 @login_required
+@api_view(['GET'])
 def my_profile_view(request):
     profile = Profile.objects.get(user=request.user)
     form = ProfileModelForm(request.POST or None, request.FILES or None, instance=profile)
@@ -29,6 +32,7 @@ def my_profile_view(request):
 
 # friends invitations
 @login_required
+@api_view(['GET'])
 def invites_received_view(request):
     profile = Profile.objects.get(user=request.user)
     qs = Relationship.objects.invitations_received(profile)
@@ -45,6 +49,7 @@ def invites_received_view(request):
     return render(request, 'profiles/my_invites.html', context)
 
 @login_required
+@api_view(['POST'])
 def accept_invitation(request):
     if request.method=="POST":
         pk = request.POST.get('profile_pk')
@@ -57,6 +62,7 @@ def accept_invitation(request):
     return redirect('profiles:my-invites-view')
 
 @login_required
+@api_view(['POST'])
 def reject_invitation(request):
     if request.method=="POST":
         pk = request.POST.get('profile_pk')
@@ -68,6 +74,7 @@ def reject_invitation(request):
 
 
 @login_required
+@api_view(['GET'])
 def invite_profiles_list_view(request):
     user = request.user
     qs = Profile.objects.get_all_profiles_to_invite(user)
@@ -76,6 +83,7 @@ def invite_profiles_list_view(request):
 
     return render(request, 'profiles/to_invite_list.html', context)
 @login_required
+@api_view(['GET'])
 def profiles_list_view(request):
     user = request.user
     qs = Profile.objects.get_all_profiles(user)
@@ -143,6 +151,7 @@ class ProfileListView(LoginRequiredMixin, ListView):
         return context
 
 @login_required
+@api_view(['POST'])
 def send_invitation(request):
     if request.method == 'POST':
         pk = request.POST.get('profile_pk')
@@ -156,6 +165,7 @@ def send_invitation(request):
     return redirect('profiles:my-profile-view')
 
 @login_required
+@api_view(['POST'])
 def remove_from_friends(request):
     if request.method == 'POST':
         pk = request.POST.get('profile_pk')
