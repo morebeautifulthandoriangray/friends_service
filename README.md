@@ -1,4 +1,4 @@
-<h1 align="center">Hi there, I'm <a href="https://daniilshat.ru/" target="_blank">Kate Ezhova</a> 
+<h1 align="center">Hi there, I'm <a href="" target="_blank">Kate Ezhova</a> 
 <img src="https://github.com/blackcater/blackcater/raw/main/images/Hi.gif" height="32"/></h1>
 <h3 align="center">Computer science student </h3>
 <h3 align="center">Здесь будет вся информация о проекте: </h3>  
@@ -84,7 +84,7 @@
 
     ```python
     /admin/ - admin panel for regulating profiles,
-    users, ralationships between users
+    users, relationships between users
    
    to get admin panel use this:
    - login: keito
